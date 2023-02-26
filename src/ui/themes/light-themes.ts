@@ -44,6 +44,50 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: 'Poppins, Roboto, sans-serif',
-    }
+    },
+    shape: {
+        borderRadius: 3
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none',
+                    borderWidth: '2px',
+                    ':hover': {
+                        borderWidth: '2px',
+                    },
+                },
+            },
+            variants: [
+                {
+                    props: { variant: 'contained', color: 'secondary' },
+                    style: {
+                        color: 'white',
+                    },
+                },
+            ],
+        },
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    boxShadow: '0px 0px 39px rgba(0, 0, 0, 0.05)',
+                },
+            },
+        },
+        MuiTextField: {
+            defaultProps: {
+                InputLabelProps: {
+                    required: false,
+                },
+                required: true,
+            },
+        },
+        MuiSelect: {
+            defaultProps: {
+                required: true,
+            },
+        },
+    },
 });
 export default theme;
